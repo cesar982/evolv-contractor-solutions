@@ -344,7 +344,7 @@ ul, ol {
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: 90px;
+  padding-top: 130px;
   padding-bottom: 80px;
   background-color: var(--bg-primary);
   overflow: hidden;
@@ -872,7 +872,7 @@ ul, ol {
 
   /* Hero */
   .hero {
-    padding-top: 80px;
+    padding-top: 110px;
     padding-bottom: 56px;
   }
 
