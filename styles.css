@@ -225,7 +225,26 @@ ul, ol {
   transform: translateY(0);
 }
 
-/* ── Logo Component ─────────────────────────────────────────── */
+/* ── Logo Image ─────────────────────────────────────────────── */
+.logo-img {
+  display: block;
+  object-fit: contain;
+}
+
+.logo-img--nav {
+  height: 44px;
+  width: auto;
+  max-width: 200px;
+}
+
+.logo-img--footer {
+  height: 36px;
+  width: auto;
+  max-width: 160px;
+  opacity: 0.9;
+}
+
+/* ── Logo Component (legacy SVG — kept for reference) ────────── */
 .logo {
   display: flex;
   flex-direction: column;
@@ -507,7 +526,7 @@ ul, ol {
   white-space: nowrap;
 }
 
-/* Photo placeholder */
+/* Photo placeholder (legacy) */
 .photo-placeholder {
   width: 100%;
   aspect-ratio: 3 / 4;
@@ -526,21 +545,22 @@ ul, ol {
   overflow: hidden;
 }
 
-.photo-placeholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(212, 134, 10, 0.04) 0%,
-    transparent 60%
-  );
-}
-
 .photo-placeholder__label {
   position: relative;
   z-index: 1;
   color: var(--text-muted);
+}
+
+/* Real headshot */
+.about__headshot {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-accent);
+  display: block;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(212, 134, 10, 0.12);
 }
 
 /* ── SECTION 5: Contact Form ────────────────────────────────── */
