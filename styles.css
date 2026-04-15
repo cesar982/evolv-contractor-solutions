@@ -936,3 +936,293 @@ ul, ol {
     display: none;
   }
 }
+
+/* ── Hero Badge ─────────────────────────────────────────────── */
+.hero__badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background-color: rgba(212, 134, 10, 0.10);
+  border: 1px solid rgba(212, 134, 10, 0.35);
+  border-radius: 100px;
+  padding: 6px 18px;
+  margin-bottom: 24px;
+}
+
+/* ── SECTION 3: Proof Stats ─────────────────────────────────── */
+.proof {
+  background-color: var(--bg-secondary);
+  padding-block: 72px;
+}
+
+.proof__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.proof__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.proof__number {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.proof__label {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 200px;
+}
+
+@media (max-width: 700px) {
+  .proof__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ── SECTION 4: How It Works ────────────────────────────────── */
+.how {
+  background-color: var(--bg-primary);
+}
+
+.how__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: 48px;
+}
+
+.how__step {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.how__step:last-child {
+  border-bottom: none;
+}
+
+.how__step-num {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-top: 4px;
+  min-width: 32px;
+}
+
+.how__step-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.how__step-body {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.how__guarantee {
+  background-color: rgba(212, 134, 10, 0.06);
+  border: 1px solid rgba(212, 134, 10, 0.30);
+  border-radius: var(--radius-md);
+  padding: 24px 32px;
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.how__guarantee-text {
+  font-size: 18px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.how__guarantee-text strong {
+  color: var(--accent);
+}
+
+/* ── SECTION 5: Offer Stack ─────────────────────────────────── */
+.offers {
+  background-color: var(--bg-secondary);
+}
+
+.offers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.offer__card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  position: relative;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.offer__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.offer__card--featured {
+  border-color: var(--border-accent);
+  background-color: #1E1A12;
+}
+
+.offer__badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0D0D0D;
+  background-color: var(--accent);
+  border-radius: 100px;
+  padding: 4px 14px;
+  white-space: nowrap;
+}
+
+.offer__step {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.offer__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.offer__price {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.offer__price-note {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.offer__body {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.offer__outcome {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-default);
+  padding-top: 14px;
+  letter-spacing: 0.01em;
+}
+
+.offers__note {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.offers__note strong {
+  color: var(--accent);
+}
+
+/* ── SECTION 7: Pilot Program ───────────────────────────────── */
+.pilot {
+  background-color: var(--bg-primary);
+}
+
+.pilot__inner {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.pilot__badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background-color: rgba(212, 134, 10, 0.10);
+  border: 1px solid rgba(212, 134, 10, 0.35);
+  border-radius: 100px;
+  padding: 6px 18px;
+  margin-bottom: 20px;
+}
+
+.pilot__title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 28px;
+}
+
+.pilot__body {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.pilot__body--bold {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pilot__inner .btn {
+  margin-top: 16px;
+}
