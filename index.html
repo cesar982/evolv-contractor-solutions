@@ -267,7 +267,10 @@
         method="POST"
         id="diagnostic-form"
         novalidate
+        onsubmit="handleFormSubmit(event)"
       >
+        <input type="hidden" name="_next" value="https://calendly.com/cesar-evolvcontractorsolutions/30min" />
+        <input type="hidden" name="_captcha" value="false" />
         <div class="form__row form__row--2col">
           <div class="form__group">
             <label class="form__label" for="first-name">First Name <span class="form__required" aria-hidden="true">*</span></label>
@@ -366,9 +369,9 @@
 
         <div id="form-message" class="form__message" role="alert" aria-live="polite"></div>
 
-        <a href="https://calendly.com/cesar-evolvcontractorsolutions/30min" class="btn btn--primary btn--full" target="_blank" style="display: inline-block; text-align: center;">
-          Book Your Free Demo &rarr;
-        </a>
+        <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+          Submit & Go to Calendly &rarr;
+        </button>
       </form>
 
       <div class="contact__below fade-in">
@@ -430,5 +433,44 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('diagnostic-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const formData = new FormData(form);
+      
+      // Disable button to prevent double-submission
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      
+      // Submit to Formspree
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Wait 1 second to ensure email is queued, then redirect
+          setTimeout(() => {
+            window.location.href = 'https://calendly.com/cesar-evolvcontractorsolutions/30min';
+          }, 1000);
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit & Go to Calendly →';
+          alert('There was an error submitting the form. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit & Go to Calendly →';
+        alert('There was an error submitting the form. Please try again.');
+      });
+    }
+  </script>
 </body>
 </html>
